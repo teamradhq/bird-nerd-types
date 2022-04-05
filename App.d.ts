@@ -1,4 +1,4 @@
-declare module BirdNerd {
+declare namespace BirdNerd {
   namespace App {
     namespace Pages {
       interface Page {

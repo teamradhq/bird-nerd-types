@@ -3,7 +3,7 @@
 /// <reference path="./Data.d.ts" />
 /// <reference path="./JSON.d.ts" />
 
-declare module BirdNerd {
+declare namespace BirdNerd {
   interface PrefixOptions {
     prefix?: string,
     suffix?: string,

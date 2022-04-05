@@ -1,4 +1,4 @@
-declare module BirdNerd {
+declare namespace BirdNerd {
   namespace Data {
     /**
      * Records should have a name and slug which should be

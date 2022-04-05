@@ -1,4 +1,4 @@
-declare module BirdNerd {
+declare namespace BirdNerd {
   namespace Api {
     type Payload<T> = Omit<T, '_id'>;
 

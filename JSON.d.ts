@@ -1,4 +1,4 @@
-declare module BirdNerd {
+declare namespace BirdNerd {
   namespace JSON {
     /** JSON data extracted from source CSV data. */
     type BirdJSONData = {
