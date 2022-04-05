@@ -18,7 +18,7 @@ declare namespace BirdNerd {
     /** A record for a bird family. */
     interface BirdFamilyData extends BaseRecord {
       name: BirdFamily;
-      scientificFamily: string;
+      scientificName: string;
     }
 
     /** Wiki infobox table rows contain one or two data cells. */
@@ -92,12 +92,11 @@ declare namespace BirdNerd {
     }
 
     /** Information on a single bird species. */
-    type BirdSpecies = BaseRecord & {
+    type BirdSpecies = BirdFamilyData & {
       family: string;
       population: BirdPopulation;
-      status: BirdStatus;
-      scientificName: string;
       scientificFamily: string;
+      status: BirdStatus;
       taxonomyNotes: string;
     };
   }
