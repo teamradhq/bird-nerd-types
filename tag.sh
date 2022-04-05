@@ -47,8 +47,8 @@ update_project_types() {
     npm i "$REMOTE#$TAG"
 
     git add package*
-    git commit -m "Update types package"
-    git tag -a "types-$TAG" -m "Update types package"
+    git commit -m "Update types: $MESSAGE"
+    git tag -a "types-$TAG" -m "Update types@$TAG"
     git push --tags
 
     cd "$DIR" || return
