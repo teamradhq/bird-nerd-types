@@ -2,13 +2,13 @@ declare namespace BirdNerd {
   namespace JSON {
     /** JSON data extracted from source CSV data. */
     type BirdJSONData = {
-      birds: Data.BirdSpecies[],
       families: Data.BirdFamily[],
-      populations: Data.BirdPopulation[],
-      statuses: Data.BirdStatus[],
       familyData: Data.BirdFamilyData[],
       populationData: Data.BirdPopulationData[],
+      populations: Data.BirdPopulation[],
+      species: Data.BirdSpecies[],
       statusData: Data.BirdStatusData[],
+      statuses: Data.BirdStatus[],
     };
 
     /** JSON data scraped from wikipedia. */
