@@ -68,5 +68,5 @@ fi
 
 REMOTE=$(get_github_remote)
 update_types
-update_project_types "$API_PATH"
+update_project_types "$APP_PATH"
 update_project_types "$API_PATH"
