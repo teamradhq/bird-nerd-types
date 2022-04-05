@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/triple-slash-reference */
 /// <reference path="./API.d.ts" />
 /// <reference path="./App.d.ts" />
 /// <reference path="./Data.d.ts" />
