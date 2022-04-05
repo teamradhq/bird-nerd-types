@@ -29,6 +29,5 @@ declare namespace BirdNerd {
       Model: Model;
     }
   }
-
 }
 

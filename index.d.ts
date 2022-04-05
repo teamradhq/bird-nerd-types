@@ -9,12 +9,5 @@ declare namespace BirdNerd {
     suffix?: string,
     value: string,
   }
-
-  interface PageEntry {
-    path: string,
-    title: string,
-    key: string,
-    Component?: React.FC
-  }
 }
 

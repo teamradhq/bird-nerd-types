@@ -18,4 +18,3 @@ declare namespace BirdNerd {
     }
   }
 }
-
