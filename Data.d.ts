@@ -13,23 +13,23 @@ declare namespace BirdNerd {
     type BaseRecordWithColor = BaseRecord & { color: string }
 
     /** The name of a bird family. */
-    type BirdFamily = string;
+    type FamilyName = string;
 
     /** A record for a bird family. */
-    interface BirdFamilyData extends BaseRecord {
-      name: BirdFamily;
+    type Family = BaseRecord & {
+      name: FamilyName;
       scientificName: string;
     }
 
     /** Wiki infobox table rows contain one or two data cells. */
-    type WikiInfoBoxData = [string] | [string, string];
+    type WikiInfoBox = [string] | [string, string];
 
-    type WikiImageData = {
+    type WikiImage = {
       [k in 'src' | 'width' | 'height']: string;
     };
 
     /** A figure includes a caption and srcset. */
-    type WikiFigureData = {
+    type WikiFigure = {
       caption: string;
       srcset: { magnification: number, src: string }[]
     }
@@ -38,26 +38,26 @@ declare namespace BirdNerd {
      * Wiki data is extracted from wikipedia pages and includes
      * a link back to the original article.
      */
-    interface WikiData {
-      figures: WikiFigureData[];
+    interface WikiArticle {
+      figures: WikiFigure[];
       href: string;
       image: string;
-      images: WikiImageData[];
+      images: WikiImage[];
       infoBox: string;
-      infoBoxData: WikiInfoBoxData[];
+      infoBoxData: WikiInfoBox[];
       longDescription: string;
       longDescriptionHTML: string;
       shortDescription: string;
     }
 
     /** Data from Wikipedia that is linked to a bird family. */
-    type WikiBirdFamilyData = BirdFamilyData & WikiData;
+    type WikiFamily = Family & WikiArticle;
 
     /** Data from Wikipedia that is linked to a bird species. */
-    type WikiSpeciesData = BirdSpecies & WikiData;
+    type WikiSpecies = Species & WikiArticle;
 
     /** Indicates the location where a bird species is found. */
-    type BirdPopulation =
+    type PopulationName =
       | 'Australian'
       | 'Endemic'
       | 'Extinct'
@@ -69,12 +69,12 @@ declare namespace BirdNerd {
       ;
 
     /** A record for a bird population. */
-    type BirdPopulationData = BaseRecordWithColor & {
-      name: BirdPopulation;
+    type Population = BaseRecordWithColor & {
+      name: PopulationName;
     }
 
     /** Indicates the conservation status of a bird species. */
-    type BirdStatus =
+    type StatusName =
       | 'Critically Endangered'
       | 'Endangered'
       | 'Extinct'
@@ -87,16 +87,16 @@ declare namespace BirdNerd {
       ;
 
     /** A record for a conservation status. */
-    type BirdStatusData = BaseRecordWithColor & {
-      name: BirdStatus;
+    type Status = BaseRecordWithColor & {
+      name: StatusName;
     }
 
     /** Information on a single bird species. */
-    type BirdSpecies = BirdFamilyData & {
+    type Species = Family & {
       family: string;
-      population: BirdPopulation;
+      population: PopulationName;
       scientificFamily: string;
-      status: BirdStatus;
+      status: StatusName;
       taxonomyNotes: string;
     };
   }

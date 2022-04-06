@@ -14,18 +14,18 @@ declare namespace BirdNerd {
         /** Store data required for application. */
         interface Store {
           isInitialised: boolean;
-          species: Data.BirdSpecies[]
-          families: Data.BirdFamily[]
-          populations: Data.BirdPopulation[]
-          statuses: Data.BirdStatus[]
-          filterFamilies: Data.BirdFamily[]
-          filterPopulations: Data.BirdPopulation[]
-          filterStatuses: Data.BirdStatus[]
-          familyData: Data.BirdFamilyData[]
-          populationData: Data.BirdPopulationData[]
-          statusData: Data.BirdStatusData[]
-          wikiFamilyData: Data.WikiBirdFamilyData[]
-          wikiSpeciesData: Data.WikiSpeciesData[]
+          species: Data.Species[]
+          families: Data.FamilyName[]
+          populations: Data.PopulationName[]
+          statuses: Data.StatusName[]
+          filterFamilies: Data.FamilyName[]
+          filterPopulations: Data.PopulationName[]
+          filterStatuses: Data.StatusName[]
+          familyData: Data.Family[]
+          populationData: Data.Population[]
+          statusData: Data.Status[]
+          wikiFamilyData: Data.WikiFamily[]
+          wikiSpeciesData: Data.WikiSpecies[]
         }
       }
     }
