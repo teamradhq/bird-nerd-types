@@ -21,6 +21,50 @@ declare namespace BirdNerd {
       scientificName: string;
     }
 
+    /** Indicates the location where a bird species is found. */
+    type PopulationName =
+      | 'Australian'
+      | 'Endemic'
+      | 'Extinct'
+      | 'Extinct Endemic'
+      | 'Introduced'
+      | 'Non-breeding'
+      | 'Non-breeding Migrant'
+      | 'Vagrant'
+      ;
+
+    /** A record for a bird population. */
+    type Population = BaseRecordWithColor & {
+      name: PopulationName;
+    }
+
+    /** Information on a single bird species. */
+    type Species = Family & {
+      family: string;
+      population: PopulationName;
+      scientificFamily: string;
+      status: StatusName;
+      taxonomyNotes: string;
+    };
+
+    /** Indicates the conservation status of a bird species. */
+    type StatusName =
+      | 'Critically Endangered'
+      | 'Endangered'
+      | 'Extinct'
+      | 'Introduced'
+      | 'Least Concern'
+      | 'Near Threatened'
+      | 'Not Assessed'
+      | 'Vagrant'
+      | 'Vulnerable'
+      ;
+
+    /** A record for a conservation status. */
+    type Status = BaseRecordWithColor & {
+      name: StatusName;
+    }
+
     /** Wiki infobox table rows contain one or two data cells. */
     type WikiInfoBox = [string] | [string, string];
 
@@ -55,49 +99,5 @@ declare namespace BirdNerd {
 
     /** Data from Wikipedia that is linked to a bird species. */
     type WikiSpecies = Species & WikiArticle;
-
-    /** Indicates the location where a bird species is found. */
-    type PopulationName =
-      | 'Australian'
-      | 'Endemic'
-      | 'Extinct'
-      | 'Extinct Endemic'
-      | 'Introduced'
-      | 'Non-breeding'
-      | 'Non-breeding Migrant'
-      | 'Vagrant'
-      ;
-
-    /** A record for a bird population. */
-    type Population = BaseRecordWithColor & {
-      name: PopulationName;
-    }
-
-    /** Indicates the conservation status of a bird species. */
-    type StatusName =
-      | 'Critically Endangered'
-      | 'Endangered'
-      | 'Extinct'
-      | 'Introduced'
-      | 'Least Concern'
-      | 'Near Threatened'
-      | 'Not Assessed'
-      | 'Vagrant'
-      | 'Vulnerable'
-      ;
-
-    /** A record for a conservation status. */
-    type Status = BaseRecordWithColor & {
-      name: StatusName;
-    }
-
-    /** Information on a single bird species. */
-    type Species = Family & {
-      family: string;
-      population: PopulationName;
-      scientificFamily: string;
-      status: StatusName;
-      taxonomyNotes: string;
-    };
   }
 }
