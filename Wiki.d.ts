@@ -23,7 +23,6 @@ declare namespace BirdNerd {
       href: string;
       image: string;
       images: Image[];
-      infoBox: string;
       infoBoxData: InfoBox[];
       longDescription: string;
       longDescriptionHTML: string;
