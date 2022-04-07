@@ -64,40 +64,5 @@ declare namespace BirdNerd {
     type Status = BaseRecordWithColor & {
       name: StatusName;
     }
-
-    /** Wiki infobox table rows contain one or two data cells. */
-    type WikiInfoBox = [string] | [string, string];
-
-    type WikiImage = {
-      [k in 'src' | 'width' | 'height']: string;
-    };
-
-    /** A figure includes a caption and srcset. */
-    type WikiFigure = {
-      caption: string;
-      srcset: { magnification: number, src: string }[]
-    }
-
-    /**
-     * Wiki data is extracted from wikipedia pages and includes
-     * a link back to the original article.
-     */
-    interface WikiArticle {
-      figures: WikiFigure[];
-      href: string;
-      image: string;
-      images: WikiImage[];
-      infoBox: string;
-      infoBoxData: WikiInfoBox[];
-      longDescription: string;
-      longDescriptionHTML: string;
-      shortDescription: string;
-    }
-
-    /** Data from Wikipedia that is linked to a bird family. */
-    type WikiFamily = Family & WikiArticle;
-
-    /** Data from Wikipedia that is linked to a bird species. */
-    type WikiSpecies = Species & WikiArticle;
   }
 }

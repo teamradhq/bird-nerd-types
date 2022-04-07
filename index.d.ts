@@ -3,6 +3,7 @@
 /// <reference path="./App.d.ts" />
 /// <reference path="./Data.d.ts" />
 /// <reference path="./JSON.d.ts" />
+/// <reference path="./Wiki.d.ts" />
 
 declare namespace BirdNerd {
   interface PrefixOptions {

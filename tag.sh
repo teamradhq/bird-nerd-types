@@ -67,6 +67,7 @@ then
 fi
 
 REMOTE=$(get_github_remote)
+./updatePackage.js "$TAG"
 update_types
 update_project_types "$APP_PATH"
 update_project_types "$API_PATH"
