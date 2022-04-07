@@ -18,6 +18,7 @@ declare namespace BirdNerd {
      * a link back to the original article.
      */
     interface Article {
+      _type: 'family' | 'species',
       figures: Figure[];
       href: string;
       image: string;
