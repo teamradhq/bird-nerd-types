@@ -4,7 +4,7 @@ declare namespace BirdNerd {
      * Records should have a name and slug which should be
      * unique to the collection.
      */
-    type BaseRecord = { slug: string, name: string }
+    type BaseRecord = { slug: string, name: string, _type: string }
 
     /**
      * Some records may have a colour which may or may not be
@@ -14,17 +14,20 @@ declare namespace BirdNerd {
 
     /** A record for a bird family. */
     type Family = BaseRecord & {
+      _type: 'family';
       name: Names.Family;
       scientificName: string;
     }
 
     /** A record for a bird population. */
     type Population = BaseRecordWithColor & {
+      _type: 'population';
       name: Names.Population;
     }
 
     /** Information on a single bird species. */
     type Species = Family & {
+      _type: 'species';
       family: Names.Family;
       population: Names.Population;
       scientificFamily: string;
@@ -34,6 +37,7 @@ declare namespace BirdNerd {
 
     /** A record for a conservation status. */
     type Status = BaseRecordWithColor & {
+      _type: 'status';
       name: Names.Status;
     }
   }
