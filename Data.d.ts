@@ -26,8 +26,9 @@ declare namespace BirdNerd {
     }
 
     /** Information on a single bird species. */
-    type Species = Family & {
+    type Species = BaseRecord & {
       _type: 'species';
+      scientificName: string;
       family: Names.Family;
       population: Names.Population;
       scientificFamily: string;
