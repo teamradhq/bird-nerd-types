@@ -11,4 +11,4 @@ if (!versionMatch) {
 const packageJson = require('./package.json');
 packageJson.version = version;
 
-fs.writeFile('./package.json', JSON.stringify(packageJson, null, 2), () => {});
+fs.writeFile('./package.wikiJson', JSON.stringify(packageJson, null, 2), () => {});
