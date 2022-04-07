@@ -12,57 +12,29 @@ declare namespace BirdNerd {
      */
     type BaseRecordWithColor = BaseRecord & { color: string }
 
-    /** The name of a bird family. */
-    type FamilyName = string;
-
     /** A record for a bird family. */
     type Family = BaseRecord & {
-      name: FamilyName;
+      name: Names.Family;
       scientificName: string;
     }
 
-    /** Indicates the location where a bird species is found. */
-    type PopulationName =
-      | 'Australian'
-      | 'Endemic'
-      | 'Extinct'
-      | 'Extinct Endemic'
-      | 'Introduced'
-      | 'Non-breeding'
-      | 'Non-breeding Migrant'
-      | 'Vagrant'
-      ;
-
     /** A record for a bird population. */
     type Population = BaseRecordWithColor & {
-      name: PopulationName;
+      name: Names.Population;
     }
 
     /** Information on a single bird species. */
     type Species = Family & {
-      family: string;
-      population: PopulationName;
+      family: Names.Family;
+      population: Names.Population;
       scientificFamily: string;
-      status: StatusName;
+      status: Names.Status;
       taxonomyNotes: string;
     };
 
-    /** Indicates the conservation status of a bird species. */
-    type StatusName =
-      | 'Critically Endangered'
-      | 'Endangered'
-      | 'Extinct'
-      | 'Introduced'
-      | 'Least Concern'
-      | 'Near Threatened'
-      | 'Not Assessed'
-      | 'Vagrant'
-      | 'Vulnerable'
-      ;
-
     /** A record for a conservation status. */
     type Status = BaseRecordWithColor & {
-      name: StatusName;
+      name: Names.Status;
     }
   }
 }
