@@ -6,6 +6,12 @@ declare namespace BirdNerd {
      */
     type BaseRecord = { slug: string, name: string, _type: string }
 
+    type Nerd = BaseRecord & {
+      username: string;
+      name?: string;
+      birthday?: Date;
+    }
+
     /**
      * Some records may have a colour which may or may not be
      * unique to collection.
