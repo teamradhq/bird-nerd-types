@@ -1,3 +1,4 @@
+
 declare namespace BirdNerd {
   namespace Api {
     type Payload<T> = Omit<T, '_id'>;
@@ -43,6 +44,18 @@ declare namespace BirdNerd {
       name?: string,
     };
 
+    /**
+     * To update a user's password, their user id, existing
+     * password and a new password need to be provided.
+     */
+    type PasswordUpdateRequest = {
+      /** User's ObjectId */
+      _id: string,
+      /** Existing password for the user. */
+      password: string;
+      /** New password to set when validation passes. */
+      newPassword: string;
+    };
   }
 }
 
