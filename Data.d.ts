@@ -5,6 +5,8 @@ declare namespace BirdNerd {
      * unique to the collection.
      */
     type BaseRecord = {
+      /** The item's object id. */
+      _id?: string;
       /** An item's type should correspond to the collection it's stored in. */
       _type: string;
       /** A slug should be unique to this item's collection. */
