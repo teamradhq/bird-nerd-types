@@ -28,6 +28,21 @@ declare namespace BirdNerd {
       plural: string;
       Model: Model;
     }
+
+    /**
+     * A login request will have username and password. There may also
+     * be additional field values included if the request is a new
+     * registration or update.
+     */
+    export type LoginRequest = {
+      /** The unique username. */
+      username: string,
+      /** The plain-text password. */
+      password: string,
+      /** Optional name field for registration or update. */
+      name?: string,
+    };
+
   }
 }
 
