@@ -7,6 +7,7 @@ declare namespace BirdNerd {
     type BaseRecord = { slug: string, name: string, _type: string }
 
     type Nerd = BaseRecord & {
+      _type: 'nerd',
       username: string;
       name?: string;
       birthday?: Date;
